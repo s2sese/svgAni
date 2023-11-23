@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> svgDashAni</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #E1C2FF 9.09%, #BCDFFF 49.17%, #FFFAE2 91.84%);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .myPath {
+            fill: none;
+            /* 면의 색을 채우는 fill */
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-dasharray: 20 5;
+            /* 20px 선, 5px 여백 */
+            stroke-dashoffset: -700;
+            /* 속도 - 700(양수) 오른쪽, -700(음수) 왼쪽으로 돌아감 */
+            animation: sese 4s forwards;
+            /* fowards - 애니메이션 마친 후의 상태 유지
+            infinite - 무한반복 */
+        }
+
+        @keyframes sese {
+
+            /* to - 마지막 상태 */
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- viewBox : SVG의 크기와 좌표시스템 정의하는 데 사용되는 구조  0 0 280 13 => min-x, min-y, width, height -->
+    <a href="https://www.naver.com" target="_blank">
+        <!-- target="_blank" - 링크 클릭시 별도의 브라우저에서 사이트가 나오게 함 -->
+        <svg width="100" height="100" viewBox="0 0 185 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="myPath"
+                d="M86.7866 3.07089C89.5763 -0.869831 95.4237 -0.869835 98.2133 3.07089L127.523 44.4752C128.411 45.7299 129.688 46.6573 131.156 47.1143L179.591 62.1951C184.201 63.6304 186.008 69.1917 183.122 73.0625L152.801 113.733C151.883 114.965 151.395 116.466 151.414 118.003L152.038 168.728C152.098 173.555 147.367 176.992 142.794 175.444L94.7449 159.175C93.2889 158.682 91.7111 158.682 90.2551 159.175L42.2059 175.444C37.6328 176.992 32.9021 173.555 32.9616 168.728L33.5862 118.003C33.6051 116.466 33.1175 114.965 32.1987 113.733L1.87812 73.0625C-1.00769 69.1917 0.799268 63.6304 5.40916 62.1951L53.8443 47.1143C55.312 46.6573 56.5885 45.7299 57.4767 44.4752L86.7866 3.07089Z"
+                fill="white" />
+        </svg>
+    </a>
+
+</body>
+
+</html>
